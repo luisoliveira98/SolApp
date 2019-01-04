@@ -25,11 +25,15 @@ import java.text.FieldPosition;
 import java.text.ParsePosition;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 import deti.ua.pt.solapp.Parsers.WeatherByLocalParser;
 import deti.ua.pt.solapp.database.entity.WeatherByLocal;
 
 public class MainActivity extends AppCompatActivity {
+
+    Map<String, Integer> cities = new HashMap<>();
 
     private Button consultWeather;
     private Button getTodayDate;
@@ -40,6 +44,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        cities.put("Aveiro", 1010500);
+        cities.put("Coimbra", 1060300);
+        cities.put("Lisboa", 1110600);
+        cities.put("Porto", 1131200);
 
         //Initialize UI components
         consultWeather = (Button) findViewById(R.id.button_weather);
@@ -58,9 +67,10 @@ public class MainActivity extends AppCompatActivity {
     public void getWeather(View view) {
         Intent intent = new Intent(this, WeatherActivity.class);
         String d = date.getText().toString();
-        String c = city.getSelectedItem().toString();
+        int c = cities.get(city.getSelectedItem().toString());
         intent.putExtra("date", d);
-        intent.putExtra("city", c);
+        intent.putExtra("cityId", c);
+        intent.putExtra("city", city.getSelectedItem().toString());
         startActivity(intent);
     }
 

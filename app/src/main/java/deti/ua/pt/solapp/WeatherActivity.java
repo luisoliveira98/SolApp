@@ -27,8 +27,9 @@ import deti.ua.pt.solapp.database.entity.WeatherByLocal;
 public class WeatherActivity extends AppCompatActivity {
 
     //attributes needed to search in database
-    private String city = "Aveiro";
-    private String date = "2019-01-05";
+    private String city;
+    private String date;
+    private int globalIdLocal;
 
     //UI components
     private TextView local,
@@ -45,13 +46,16 @@ public class WeatherActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_weather);
 
+        city = (String) getIntent().getExtras().getSerializable("city");
+        date = (String) getIntent().getExtras().getSerializable("date");
+        globalIdLocal = (int) getIntent().getExtras().getSerializable("cityId");
+
         //Initialize UI components
         local = (TextView) findViewById(R.id.textCity);
         forecastDate = (TextView) findViewById(R.id.textDate);
         temperature = (TextView)findViewById(R.id.textTemperature);
         windDirection = (TextView) findViewById(R.id.textWindDirection);
         weatherDescription = (TextView) findViewById(R.id.textWeatherDescription);
-        int globalIdLocal = 1010500;
 
         weatherViewModel = ViewModelProviders.of(this).get(WeatherViewModel.class);
         weatherViewModel.init(globalIdLocal, date);

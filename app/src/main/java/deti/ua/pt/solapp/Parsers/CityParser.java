@@ -4,8 +4,6 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import deti.ua.pt.solapp.database.entity.City;
-
 public class CityParser {
 
     private static String IPMA_DATA = "data";
