@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+     <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+     <title>Document</title>
+</head>
+
+<body>
+	<h1>SolApp</h1>
+	<p></p>
+	
+	<h2>Arquitetura</h2>
+	<p>No desenvolvimento da aplicação foi usada Android Architectural Components que consiste em fazer a separação da interface de utilizador com a obtenção de dados a mostrar na UI, de forma a criar uma maior abstração na aplicação.</p>
+	<p>A arquitetura consiste na criação de uma View Model que faz pedidos à base de dados, esta à escuta de alterações na base de dados de forma a atualizar a UI com informação mais recente.</p>
+	
+	<h3>Base da dados</h3>
+	<p>Na criação da base de dados foi usado a entididade WeatherByLocal, onde é guardado as informações sobre o estado do tempo por dia. Depois foram criadas as classes de Database e a interface Dao, onde sao especificadas as operações de acesso à base de dados.</p>
+	
+	<h3>WeatherRepository</h3>
+	<p>Nesta classe é onde é feito o pedido à API externa (IPMA API), onde o pedido é feito se os dados guardados tiverem mais de 15min.</p>
+	<p>Para fazer o pedido à API é utilizado a biblioteca Volley</p>
+	<p></p>
+	
+	<h2>Observações:</h2>
+	<p>A aplicação não coorre como esperado uma vez que que não esta a guardar os dados na base de dados, está toda ela preparada para o fazer, mas devido a algum problema que não consegui detetar não guarda os dados na bd, fazendo com que a aplicação não estaja como esperado.</p>
+	
+	<h2>Link Repositório</h2>
+	<a href="https://github.com/luisoliveira98/SolApp.git">Link Repositório</a>
+
+	
+	
+</body>
+</html>
