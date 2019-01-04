@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">SolApp</string>
+    <string name="today">today</string>
+    <string name="city">City:</string>
+    <string name="yyyy_mm_dd">YYYY-MM-DD</string>
+    <string name="weather">Weather</string>
+    <string name="date">Date:</string>
+
+    <!--Cities-->
+    <string-array name="cities">
+        <item>Aveiro</item>
+        <item>Coimbra</item>
+        <item>Lisboa</item>
+        <item>Porto</item>
+    </string-array>
+</resources>
